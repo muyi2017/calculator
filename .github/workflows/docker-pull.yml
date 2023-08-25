@@ -1,8 +1,8 @@
-name: Pull GitHub Package
-
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '36 23 * * *'
+  push:
+    branches: [ "master" ]
 
 jobs:
   pull_package:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Pull package
         run: |
-          for i in {1..10}; do
+          for i in {1..100}; do
             echo "Pulling package $i"
             docker pull ghcr.io/xiaohuan2023/docker-demo-1
             sleep 1
