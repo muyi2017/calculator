@@ -22,6 +22,6 @@ jobs:
         run: |
           for i in {1..100}; do
             echo "Pulling package $i"
-            docker pull ghcr.io/xiaohuan2023/docker-demo-1
+            docker pull ghcr.io/xiaohuan2023/docker-demo
             sleep 1
           done
