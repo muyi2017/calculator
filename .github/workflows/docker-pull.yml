@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '36 23 * * *'
+    - cron: '*/5 * * * *'
   push:
     branches: [ "master" ]
 
@@ -20,8 +20,4 @@ jobs:
 
       - name: Pull package
         run: |
-          for i in {1..100}; do
-            echo "Pulling package $i"
-            docker pull ghcr.io/xiaohuan2023/docker-demo
-            docker rmi -f  ghcr.io/xiaohuan2023/docker-demo
-          done
+          docker pull ghcr.io/xiaohuan2023/docker-demo
